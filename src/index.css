@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body, #root { height: 100%; margin: 0; overflow: hidden; background: #070910; }
+
+/* ── Leaflet ─────────────────────────────────────── */
+.leaflet-container   { background: #0a0c14 !important; }
+.leaflet-tile-pane   { filter: brightness(0.7) saturate(0.5) contrast(1.1); }
+.leaflet-control-zoom a {
+  background: #141720 !important;
+  color: #e2e6f3 !important;
+  border-color: #1e2235 !important;
+}
+.leaflet-control-zoom a:hover { background: #1e2235 !important; }
+.leaflet-control-attribution { display: none; }
+
+/* popup */
+.leaflet-popup-content-wrapper {
+  background: #141720 !important;
+  border: 1px solid #1e2235 !important;
+  border-radius: 14px !important;
+  box-shadow: 0 16px 48px rgba(0,0,0,0.7) !important;
+  color: #e2e6f3 !important;
+  padding: 0 !important;
+}
+.leaflet-popup-tip-container { display: none; }
+.leaflet-popup-content       { margin: 0 !important; }
+.leaflet-popup-close-button  { color: #6b7494 !important; top: 10px !important; right: 10px !important; font-size: 18px !important; }
+
+/* ── Scrollbar ───────────────────────────────────── */
+::-webkit-scrollbar            { width: 4px; height: 4px; }
+::-webkit-scrollbar-track      { background: transparent; }
+::-webkit-scrollbar-thumb      { background: #1e2235; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover{ background: #3d4460; }
+
+/* ── Slider (Radix) ──────────────────────────────── */
+.slider-track  { position: relative; height: 3px; border-radius: 9999px; background: #1e2235; flex-grow: 1; cursor: pointer; }
+.slider-range  { position: absolute; height: 100%; border-radius: 9999px; }
+.slider-thumb  {
+  display: block; width: 16px; height: 16px; border-radius: 50%;
+  border: 2px solid; cursor: pointer;
+  box-shadow: 0 0 0 0 transparent;
+  transition: box-shadow 0.15s, transform 0.15s;
+}
+.slider-thumb:hover  { transform: scale(1.15); }
+.slider-thumb:focus  { outline: none; }
+.slider-thumb[data-state="active"] { box-shadow: 0 0 0 4px rgba(123,104,238,0.25); transform: scale(1.15); }
+
+/* ── Recharts ────────────────────────────────────── */
+.recharts-cartesian-axis-tick-value { font-family: 'JetBrains Mono', monospace !important; }
